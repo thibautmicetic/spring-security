@@ -32,7 +32,7 @@ public class SpringSecurityConfig {
             auth.requestMatchers("/admin").hasRole("ADMIN");
             auth.requestMatchers("/user").hasRole("USER");
             auth.anyRequest().authenticated();
-        }).formLogin(Customizer.withDefaults()).build();
+        }).formLogin(Customizer.withDefaults()).oauth2Login(Customizer.withDefaults()).build();
     }
 
     @Bean
